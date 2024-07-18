@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import Routes from './src/routes';
 
 import {
@@ -7,6 +7,7 @@ import {
   Inter_600SemiBold,
   useFonts,
 } from '@expo-google-fonts/inter';
+import { theme } from './src/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,7 +18,10 @@ export default function App() {
   return (
     <>
       {fontsLoaded && <Routes />}
-      <StatusBar style="light" translucent />
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={theme.colors.base.gray900}
+      />
     </>
   );
 }
