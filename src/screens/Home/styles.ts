@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     gap: 40,
   },
   logoContainer: {
-  width: '100%',
+    width: '100%',
 
     alignItems: 'center',
   },
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     borderColor: theme.colors.base.gray600,
     paddingHorizontal: 12,
     flex: 1,
-    color:theme.colors.base.gray600
+    color: theme.colors.base.gray50,
   },
   addBtn: {
     borderRadius: 5,
@@ -38,9 +38,20 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   addBtnText: { color: theme.colors.base.gray50 },
-  
+
+  taskCountContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
   taskCount: {
     color: theme.colors.base.gray50,
+    fontSize: theme.font_size.lg,
+    fontFamily: theme.font_weight.semibold,
+  },
+  taskCompleteCount: {
+    color: theme.colors.base.indigo,
     fontSize: theme.font_size.lg,
     fontFamily: theme.font_weight.semibold,
   },

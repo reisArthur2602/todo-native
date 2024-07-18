@@ -67,7 +67,12 @@ const HomeScreen = () => {
           flex: 1,
         }}
       >
-        <Text style={styles.taskCount}>{`Tarefas(${tasks.length})`}</Text>
+        <View style={styles.taskCountContainer}> 
+          <Text style={styles.taskCount}>{`Tarefas(${tasks.length})`}</Text>
+          <Text style={styles.taskCompleteCount}>{`Concluidas(${
+            tasks.filter((task) => task.isCompleted).length
+          })`}</Text>
+        </View>
 
         <FlatList
           contentContainerStyle={{ gap: 6 }}
