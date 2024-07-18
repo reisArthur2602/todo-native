@@ -7,15 +7,19 @@ import { theme } from '../../theme';
 
 interface ITaskCard extends Task {
   handleDelete: (id: string) => void;
+  toggleCompleted: (id: string) => void;
 }
 
-const TaskCard = ({ id, isCompleted, title , handleDelete }: ITaskCard) => {
- 
-  const ToggleComplete = () => {};
-
+const TaskCard = ({
+  id,
+  isCompleted,
+  title,
+  handleDelete,
+  toggleCompleted,
+}: ITaskCard) => {
   return (
     <View style={styles.Container}>
-      <TouchableOpacity onPress={() => ToggleComplete}>
+      <TouchableOpacity onPress={() => toggleCompleted(id)}>
         {isCompleted ? (
           <CircleCheck size={20} color={theme.colors.base.gray50} />
         ) : (

@@ -36,6 +36,14 @@ const HomeScreen = () => {
     setTasks(task);
   };
 
+  const toggleCompleted = (id: string) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, isCompleted: !task.isCompleted } : task
+      )
+    );
+  };
+
   return (
     <SafeAreaView style={styles.Container}>
       <View style={styles.logoContainer}>
@@ -65,7 +73,11 @@ const HomeScreen = () => {
           contentContainerStyle={{ gap: 6 }}
           data={tasks}
           renderItem={({ item }) => (
-            <TaskCard {...item} handleDelete={deleteTask} />
+            <TaskCard
+              {...item}
+              handleDelete={deleteTask}
+              toggleCompleted={toggleCompleted}
+            />
           )}
         />
       </ScrollView>
