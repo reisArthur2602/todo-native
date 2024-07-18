@@ -10,6 +10,7 @@ import {
 import { styles } from './styles';
 import React from 'react';
 import { theme } from '../../theme';
+import TaskCard from '../../components/task-card/TaskCard';
 
 const HomeScreen = () => {
   return (
@@ -36,6 +37,9 @@ const HomeScreen = () => {
         }}
       >
         <Text style={styles.taskCount}>{`Tarefas(0)`}</Text>
+
+        <TaskCard id="" isCompleted title="Título da tarefa" />
+        <TaskCard id="" isCompleted={false} title="Título da tarefa" />
       </ScrollView>
     </SafeAreaView>
   );

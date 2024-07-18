@@ -14,7 +14,7 @@ export const theme = {
 	font_weight: {
 		regular: 'Inter_400Regular',
 		semibold: 'Inter_600SemiBold',
-		medium: 'Inter_600Medium',
+		medium: 'Inter_500Medium',
 	},
 	font_size: {
 		sm: 12,
