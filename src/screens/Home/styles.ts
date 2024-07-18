@@ -8,6 +8,10 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 35,
     paddingVertical: 45,
     gap: 40,
+  },
+  logoContainer: {
+  width: '100%',
+
     alignItems: 'center',
   },
   InputContainer: {
@@ -33,4 +37,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   addBtnText: { color: theme.colors.base.gray50 },
+  
+  taskCount: {
+    color: theme.colors.base.gray50,
+    fontSize: theme.font_size.lg,
+    fontFamily: theme.font_weight.semibold,
+  },
 });

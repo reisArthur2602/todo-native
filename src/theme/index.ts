@@ -11,7 +11,7 @@ export const theme = {
 	
 		},
 	},
-	font_family: {
+	font_weight: {
 		regular: 'Inter_400Regular',
 		semibold: 'Inter_600SemiBold',
 		medium: 'Inter_600Medium',
@@ -22,3 +22,4 @@ export const theme = {
 		lg: 16,
 	},
 }
+
