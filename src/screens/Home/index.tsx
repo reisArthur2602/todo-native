@@ -67,7 +67,7 @@ const HomeScreen = () => {
           flex: 1,
         }}
       >
-        <Text style={styles.taskCount}>{`Tarefas(0)`}</Text>
+        <Text style={styles.taskCount}>{`Tarefas(${tasks.length})`}</Text>
 
         <FlatList
           contentContainerStyle={{ gap: 6 }}
