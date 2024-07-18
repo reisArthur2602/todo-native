@@ -5,10 +5,12 @@ import { Task } from '../../dtos/TaskDTO';
 import { Circle, CircleCheck, Trash } from 'lucide-react-native';
 import { theme } from '../../theme';
 
-const TaskCard = ({ id, isCompleted, title }: Task) => {
-  const handleDelete = (id: string) => {
-    console.log(id);
-  };
+interface ITaskCard extends Task {
+  handleDelete: (id: string) => void;
+}
+
+const TaskCard = ({ id, isCompleted, title , handleDelete }: ITaskCard) => {
+ 
   const ToggleComplete = () => {};
 
   return (

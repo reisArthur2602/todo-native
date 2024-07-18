@@ -18,9 +18,10 @@ const HomeScreen = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [title, setTitle] = useState<string>('');
 
- 
-
-
+  const deleteTask = (id: string) => {
+    const filter = tasks.filter((task) => task.id !== id);
+    setTasks(filter);
+  };
 
   const createTask = () => {
     const task = [
@@ -63,7 +64,9 @@ const HomeScreen = () => {
         <FlatList
           contentContainerStyle={{ gap: 6 }}
           data={tasks}
-          renderItem={({ item }) => <TaskCard {...item} />}
+          renderItem={({ item }) => (
+            <TaskCard {...item} handleDelete={deleteTask} />
+          )}
         />
       </ScrollView>
     </SafeAreaView>
