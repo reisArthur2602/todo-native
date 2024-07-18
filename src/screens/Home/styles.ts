@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     borderColor: theme.colors.base.gray600,
     paddingHorizontal: 12,
     flex: 1,
+    color:theme.colors.base.gray600
   },
   addBtn: {
     borderRadius: 5,

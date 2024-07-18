@@ -6,26 +6,48 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  FlatList,
 } from 'react-native';
 import { styles } from './styles';
-import React from 'react';
+import React, { useState } from 'react';
 import { theme } from '../../theme';
 import TaskCard from '../../components/task-card/TaskCard';
+import { Task } from '../../dtos/TaskDTO';
 
 const HomeScreen = () => {
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [title, setTitle] = useState<string>('');
+
+ 
+
+
+
+  const createTask = () => {
+    const task = [
+      ...tasks,
+      {
+        isCompleted: false,
+        title,
+        id: String(Math.floor(Math.random() * 100000)),
+      },
+    ];
+
+    setTasks(task);
+  };
+
   return (
     <SafeAreaView style={styles.Container}>
       <View style={styles.logoContainer}>
         <Image source={require('../../../assets/logo.png')} />
       </View>
-      {/* add task input */}
       <View style={styles.InputContainer}>
         <TextInput
           placeholder="Título da tarefa..."
           placeholderTextColor={theme.colors.base.gray600}
           style={styles.Input}
+          onChangeText={setTitle}
         />
-        <TouchableOpacity style={styles.addBtn}>
+        <TouchableOpacity style={styles.addBtn} onPress={createTask}>
           <Text style={styles.addBtnText}>+</Text>
         </TouchableOpacity>
       </View>
@@ -38,8 +60,11 @@ const HomeScreen = () => {
       >
         <Text style={styles.taskCount}>{`Tarefas(0)`}</Text>
 
-        <TaskCard id="" isCompleted title="Título da tarefa" />
-        <TaskCard id="" isCompleted={false} title="Título da tarefa" />
+        <FlatList
+          contentContainerStyle={{ gap: 6 }}
+          data={tasks}
+          renderItem={({ item }) => <TaskCard {...item} />}
+        />
       </ScrollView>
     </SafeAreaView>
   );
